@@ -12,21 +12,28 @@ class DetailScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(movie.title),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.network(
-              'https://image.tmdb.org/t/p/w500${movie.backdropPath}',
-              height: 300,
-              width: double.infinity,
-              fit: BoxFit.cover,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.network(
+                  'https://image.tmdb.org/t/p/w500${movie.backdropPath}',
+                  height: 300,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+                const SizedBox(height: 20),
+                const Text(
+                  'Overview :',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 10),
+                Text(movie.overview, textAlign: TextAlign.justify),
+              ],
             ),
-            const SizedBox(height: 20),
-            const Text(
-              'Overview',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            )
-          ],
+          ),
         ));
   }
 }
