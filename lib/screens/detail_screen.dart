@@ -31,6 +31,34 @@ class DetailScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Text(movie.overview, textAlign: TextAlign.justify),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    const Icon(Icons.calendar_month, color: Colors.blue),
+                    const SizedBox(width: 10),
+                    const Text(
+                      'Release Date : ',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(width: 10),
+                    Text(movie.releaseDate)
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    const Icon(Icons.star, color: Colors.amber),
+                    const SizedBox(width: 10),
+                    const Text(
+                      'Rating : ',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(width: 10),
+                    Text(movie.voteAverage.toString())
+                  ],
+                )
               ],
             ),
           ),
